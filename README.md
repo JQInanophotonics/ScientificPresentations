@@ -4,11 +4,11 @@
 
 I won't judge if you use PowerPoint, but know that you'll have a non-negligible chance your slide deck won't display properly at a conference — mismatched fonts, resized figures, colors gone wrong. Beamer (LaTeX for presentations) outputs a PDF that looks identical on every machine, since PDF is a standard, not a moving target.
 
-This repo is the group's guide to building **consistent, reusable, animatable** figures for a talk, and to giving that talk in Beamer using the [JqiNanoBeamerTemplate](https://github.com/JQInanophotonics/JqiNanoBeamerTemplate). Read the pages in order the first time; use them as a checklist afterwards — same spirit as [ScientificDataManagement](https://github.com/JQInanophotonics/ScientificDataManagement).
+This repo is the group's guide to structuring a talk, and to building **consistent, reusable, animatable** figures for it. Most of that — how to structure the talk, how to size and export figures, how to animate them — holds regardless of which software assembles the final deck. Only the last mile (actually placing figures and compiling) is tool-specific, and there the group's recommended path is Beamer via the [JqiNanoBeamerTemplate](https://github.com/JQInanophotonics/JqiNanoBeamerTemplate). Read the pages in order the first time; use them as a checklist afterwards — same spirit as [ScientificDataManagement](https://github.com/JQInanophotonics/ScientificDataManagement).
 
 ## Basic presentation design
 
-Before the tooling, a few things worth keeping in mind whichever tool you use:
+Before the tooling, a few things worth keeping in mind whichever tool you use. This is about how a slide *looks*; for how a whole talk should be *structured and paced* — the narrative arc, what to cut for a short talk, how to hook the audience — see [00 — Structuring a talk](Presentations/00-TalkStructure.md).
 
 - **One idea per slide.** If you're tempted to add a second point, it's a second slide.
 - **Typography and color should match across the whole talk** — same font, same palette, same meaning for a given color from the first slide to the last. See [ScientificGraphicDesign](https://github.com/JQInanophotonics/ScientificGraphicDesign) for the group's palettes and type choices.
@@ -35,6 +35,7 @@ The rest is specific to whichever tool you use:
 
 | Page | What it covers |
 |------|-----------------|
+| [00 — Structuring a talk](Presentations/00-TalkStructure.md) | The narrative arc, pacing for short talks, what to cut vs. push to backup |
 | [01 — Artboards](Presentations/01-Artboards.md) | Sizing and organizing Illustrator artboards for slide figures |
 | [02 — Exporting figures](Presentations/02-ExportingFigures.md) | Vector vs. raster export, and what PowerPoint needs that Beamer doesn't |
 | [03 — Animations](Presentations/03-Animations.md) | Multi-artboard → multi-page PDF → `\imageseq` |
@@ -47,6 +48,7 @@ The rest is specific to whichever tool you use:
 ScientificPresentations/
 ├── README.md
 └── Presentations/
+    ├── 00-TalkStructure.md
     ├── 01-Artboards.md
     ├── 02-ExportingFigures.md
     ├── 03-Animations.md
