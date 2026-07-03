@@ -1,5 +1,11 @@
 # 04 — Using Beamer
 
+## Why this is a git repo, not a single file
+
+A `.pptx` is a binary blob: git can tell you the file changed, but not *what* changed inside it, `git diff` shows nothing useful, and two people editing the same deck can't merge their changes — someone redoes work by hand. A `.tex` file is plain text: every edit is a real, readable diff, `git blame` tells you who changed which line and why, and if two people work on different frames of the same talk, git can merge those changes automatically. That compounds with the portability argument in the forewords above — plain text is also what turns a talk's version history into something actually useful, instead of a folder of `talk_v1.pptx`, `talk_v2_final.pptx`, `talk_v2_final_ACTUALLY.pptx`.
+
+This wiki assumes you already know git basics (`clone`, `add`, `commit`, `push`, `pull`, branches, resolving a conflict). If you don't yet, [QuickStartGit](https://github.com/JQInanophotonics/QuickStartGit) is the group's on-ramp — it's written for true beginners and also covers syncing a repo like this one through Overleaf's Git integration, which is how the reference talk below was actually written (see its `Update on Overleaf` commit, below).
+
 ## Starting a new talk
 
 Every talk gets its own repo, started from [JqiNanoBeamerTemplate](https://github.com/JQInanophotonics/JqiNanoBeamerTemplate):

@@ -11,6 +11,15 @@ Export settings that matter:
 - **Embed fonts, or outline text** before export — a font missing on the compiling/rendering machine otherwise turns into missing glyphs. The reference talk ships its own `fonts/` folder in the talk repo for exactly this reason (matching what Illustrator embeds).
 - Export **one artboard per figure** as its own single-page PDF, unless you're exporting an animation sequence (see [03 — Animations](03-Animations.md)), in which case you export all the frame-artboards together into a single multi-page PDF — that's how `CombMetrology.pdf` ends up with 9 pages and `WaferScale.pdf` with 3.
 
+## Keep figures light — your talk repo likely syncs through Overleaf's git bridge
+
+If you compile on Overleaf and sync it with the talk's GitHub repo (see [04 — Using Beamer](04-UsingBeamer.md) for why a talk repo is a real git repo in the first place), size matters twice over: Overleaf itself recommends staying under 100 MB for any project using Git/GitHub sync (vs. 500 MB for a project with no git integration), and a bloated repo is slower to clone, diff, and push regardless.
+
+[ScientificGraphicDesign](https://github.com/JQInanophotonics/ScientificGraphicDesign/tree/main/IllustratorsStyles) already sets the group's rule of thumb for this — **keep each exported figure under ~10 MB**. If a figure is over that, the bitmap inside it isn't rasterized down to what the plot actually needs (see [01 — Artboards](01-Artboards.md) and the note below on linked vs. embedded bitmaps). A dozen or so figures at a few MB each, per the reference talk's own `Figures/` folder, stays comfortably inside Overleaf's git-sync budget; one bloated 80 MB figure can blow it on its own.
+
+- **Link raster into Illustrator, don't embed it.** A linked bitmap keeps the `.ai` file itself small and responsive; Illustrator embeds the linked raster data into the PDF automatically at export time, so you don't lose anything at publication/talk time. (Uncheck "Create PDF Compatible File" in Illustrator's save options, or every save silently embeds a preview copy of every linked image into the `.ai` file too.)
+- This is also the same rule as [01 — Artboards, "Never rescale a figure once it's placed"](01-Artboards.md#never-rescale-a-figure-once-its-placed), from the other direction: `ScientificGraphicDesign` independently arrives at "you should not have to use `[width=\textwidth]` in `\includegraphics`" as a consequence of exporting the figure at its real placed size — oversized source bitmaps and rescaled placement tend to go together.
+
 ## Raster only when you have to
 
 Use **PNG/JPG** when the content itself is raster — a photograph, a microscope image, a complex 3D render that doesn't simplify to vector — or when the destination can't take vector at all (PowerPoint). Keep raster assets out of the main `Figures/` listing so it isn't a mix of vector figures and photos: the reference talk keeps them in `Figures/raster/` (lab photos like `P9290629_whiteBG.jpg`, `IDG_20250910_112247_907.jpg`). A raster file sitting in that subfolder doesn't have to be wired into a frame yet — it's fine to keep candidate photos there even if only some end up used.
