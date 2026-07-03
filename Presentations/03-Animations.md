@@ -2,22 +2,13 @@
 
 ## The technique: N artboards = N frames
 
-An "animation" in a Beamer talk is just a sequence of slides that reveal progressively more of a figure. You build it exactly like a static figure, except each frame is its **own artboard**, all the same size, all in the same `.ai` file, in the order they should appear:
-
-- Frame 1: the base figure.
-- Frame 2: frame 1 plus whatever appears next.
-- Frame 3: frame 2 plus the next addition.
-- ...and so on.
-
-Keep everything that doesn't change between frames **identical** — copy the artwork from one artboard to the next rather than redrawing it, so static elements don't jitter by a fraction of a point when the slide advances. Illustrator's `Edit > Paste in Place` (`Cmd+Shift+V`) across artboards keeps positions exact.
+An "animation" in a Beamer talk is just a sequence of slides that reveal progressively more of a figure. You build it exactly like a static figure, except each frame is its **own artboard**, all the same size, all in the same `.ai` file, in the order they should appear. Keep everything that doesn't change between frames **identical** — copy the artwork from one artboard to the next rather than redrawing it (Illustrator's `Edit > Paste in Place`, `Cmd+Shift+V`), so static elements don't jitter by a fraction of a point when the slide advances.
 
 ## Export as one multi-page PDF
 
-Select all the frame-artboards and export them together as a **single multi-page PDF** — one page per artboard, in artboard order: `File > Export > Export As... > Adobe PDF`, with "All" (or the relevant range) of artboards selected, "Save each artboard as a separate file" **unchecked**. The deliverable is one `.pdf` with N pages, not N separate PDFs.
+Select the frame-artboards and export them together as a **single multi-page PDF**, one page per artboard, in artboard order: `File > Export > Export As... > Adobe PDF`, "Save each artboard as a separate file" **unchecked**. The reference talk ([Example — CLEOus](Example-CLEOus.md)) does this throughout — `WaferScale.pdf` is 3 pages, `ExperimentalDemonstration.pdf` is 5, `CombMetrology.pdf` is 9.
 
 ## Drive it with `\imageseq`
-
-`JqiNanoBeamerTemplate` ships a macro built exactly for this:
 
 ```latex
 \imageseq[width=0.8\textwidth]{frames.pdf}{
@@ -28,11 +19,34 @@ Select all the frame-artboards and export them together as a **single multi-page
 }
 ```
 
-Each `page:overlay` pair maps one PDF page (one artboard) to when it appears. A page can be pinned to a single overlay, a range (`3-5`), or "from here on" (`6-`). See the template's own example in `test-helpers.tex`:
+Real examples, straight from the reference talk's `.tex`:
 
 ```latex
-\imageseq[width=\textwidth]{./Figures/CombMetrology.pdf}{1:1, 2:2, 3:3-}
+% WaferScale.pdf — a plain 3-step build, one page per overlay
+\imageseq{./Figures/WaferScale.pdf}{1:1,2:2,3:3}
+
+% ExperimentalDemonstration.pdf — page 1 is a title/setup frame shown before
+% the overlay sequence starts, so the mapping begins at page 2
+\imageseq{./Figures/ExperimentalDemonstration.pdf}{2:1,3:2,4:3,5:4-}
+
+% Conclusion.pdf — the last page stays on screen for the remainder of the frame
+\imageseq{./Figures/Conclusion.pdf}{1:1,2:2,3:3-}
 ```
+
+## One artboard set, several frames
+
+You don't need a separate multi-page PDF per slide. `CombMetrology.pdf` (9 artboards, see [01 — Artboards](01-Artboards.md)) is built once and then pulled from **three separate times** on the same slide, each `\twocolfig` bullet showing a different slice of it:
+
+```latex
+\item Precise laser frequency: optical frequency synthesis
+  \twocol[c]{0.3}{0.3}{ ... }{ \imageseq{./Figures/CombMetrology.pdf}{4:-2,8:3-} }
+\item Low-noise microwave generation: optical frequency division (OFD)
+  \twocol[b]{0.3}{0.3}{ ... }{ \imageseq{./Figures/CombMetrology.pdf}{3:-1,6:2,7:3-} }
+\item Clock stability transfer: optical clockwork
+  \twocol[b]{0.3}{0.3}{ ... }{ \imageseq{./Figures/CombMetrology.pdf}{5:-2,9:3-} }
+```
+
+Each `\imageseq` call is independent — same source PDF, different page selection, different overlay timing — so one Illustrator file backs the whole slide instead of three near-duplicate ones. If you find yourself reusing the same visual idea more than once in a talk, this is the pattern: build the full frame set once, then call `\imageseq` again wherever a subset of it is needed.
 
 Full macro syntax and options: [`MACRO_MANUAL.md#image-sequences`](https://github.com/JQInanophotonics/JqiNanoBeamerTemplate/blob/main/MACRO_MANUAL.md#image-sequences) in the template repo.
 

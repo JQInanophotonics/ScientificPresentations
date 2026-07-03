@@ -1,23 +1,49 @@
 # 01 — Using the artboard
 
-## One artboard, one figure, one size
+## One artboard, one figure, one size — but "size" means the slot, not the slide
 
-Every figure that goes into a talk starts life as its own **artboard** in Illustrator, sized to match the usable area of your slide — not the full slide, the area inside the template's margins/title. Build the figure to fill that artboard. When you place the exported PDF into Beamer at `\includegraphics[width=\textwidth]{...}`, it lands at the right proportions without Beamer (or you) having to rescale, crop, or stretch it.
+Every figure that goes into a talk starts life as its own **artboard** in Illustrator, sized to match the *slot it will occupy in the slide layout* — not necessarily the whole slide. Most talk slides aren't a single full-bleed figure; they're `\twocolfig{textW}{figW}{...}{...}` (see [04 — Using Beamer](04-UsingBeamer.md)), text on one side and the figure filling the other column. Size the artboard to that column, not to the full 16:9 canvas — otherwise Beamer letterboxes or overflows it.
 
-Why this matters: a figure exported at the wrong aspect ratio gets squashed or padded with dead space the moment it's dropped into a slide, and a figure resized by hand in Illustrator after the fact drifts out of sync with every other figure's line weight and font size in the talk.
+A real reference talk ([Example — CLEOus](Example-CLEOus.md)) settles on two recurring artboard sizes because it only ever uses two column splits:
+
+| Layout | Column width | Artboard size used |
+|---|---|---|
+| `\twocolfig[T]{0.3}{0.7}{...}` (narrow text, wide figure) | ~70% of content width | **297 × 222 pt** — `WaferScale.pdf`, `ExperimentalDemonstration.pdf`, `PDCS_MetrologyResults.pdf` |
+| `\twocolfig{0.55}{0.45}{...}` or `{0.5}{0.5}{...}` (roughly even split) | ~45–50% of content width | **200–212 × 222–230 pt** — `CombSWAP_Broadening.pdf` (200×222), `Conclusion.pdf` (212×222), `PDCS_Concept.pdf` (212×230) |
+
+Once you know which column split a slide uses, reuse the matching artboard size for every figure that goes in that slot — don't recompute it per figure. This is also why `CombMetrology.pdf` (used inside a *nested* `\twocol[c]{0.3}{0.3}{...}` for a small equation-side diagram) is smaller still: **220 × 254 pt**. The artboard follows the layout, the layout doesn't follow the artboard.
 
 ## Setting artboard size and units
 
-- `File > Document Setup` or the Artboard tool (`Shift+O`) to set width/height in the same units you think in (mm or in — pick one for the whole project).
-- Match the artboard's aspect ratio to your slide template's content frame. `JqiNanoBeamerTemplate` uses `aspectratio=169` (16:9); size your artboards accordingly so a full-width figure fills the frame without letterboxing.
-- One `.ai` file can hold **many artboards** — one per figure in the talk, or one per frame of an animation (see [03 — Animations](03-Animations.md)). Keep the whole talk's visual assets in one file so they share swatches, character styles, and symbols.
+- `File > Document Setup` or the Artboard tool (`Shift+O`) to set width/height. Working in points (`pt`) makes it trivial to match the numbers above directly, since Beamer/TikZ also thinks in points.
+- `JqiNanoBeamerTemplate` uses `aspectratio=169` (16:9) for the *overall slide*, but individual figure artboards are sized to their column, as shown above — don't assume every artboard should be 16:9.
+- One `.ai` file can hold **many artboards**. In the reference talk, `CombMetrology.ai` alone holds 9 artboards, all 220×254 pt, exported together as one multi-page PDF and reused across *three different bullet points on the same slide* (see [03 — Animations](03-Animations.md) for how `\imageseq` pulls different page ranges from the same file).
 
-## Naming artboards
+## Naming artboards and files
 
-When a file holds more than a couple of artboards, name them (double-click the artboard name in the Artboards panel) after what they show, not their order: `Fig1-SetupDiagram`, `Fig2-SpectrumOverlay`. Order still matters for animations (see below) — Illustrator exports multi-page PDFs in artboard order, so keep animation frames adjacent and sequential in the Artboards panel.
+The reference talk names figures after the physics, one `.ai`/`.pdf` pair per concept — the same convention used in [ScientificDataManagement](https://github.com/JQInanophotonics/ScientificDataManagement)'s `Data/` folders:
+
+```
+Figures/
+├── PDCS_Concept.ai / .pdf              # one concept per file
+├── PDCS_DispersionConditions.ai / .pdf
+├── PDCS_FirstResults.ai / .pdf
+├── PDCS_MetrologyResults.ai / .pdf
+├── CombMetrology.ai / .pdf             # reused across 3 bullets on 1 slide
+├── CombSWAP_Broadening.ai / .pdf
+├── DifferentSpeedRings.ai / .pdf
+├── WaferScale.ai / .pdf
+├── ExperimentalDemonstration.ai / .pdf
+├── Conclusion.ai / .pdf
+├── Acknowledgment.ai / .pdf            # opening "team" slide
+├── Acknowledgment_end.pdf              # closing thank-you slide (different crop)
+└── raster/                             # photos — see 02-ExportingFigures.md
+```
+
+Not `Figure1`, `Figure2`, `Figure_final`. When a name describes the physics, you can find the right artboard six months later without opening every file. Within a multi-artboard file, name each artboard for what it adds (`Frame1-Baseline`, `Frame2-AddSecondPump`, ...) — Illustrator exports multi-page PDFs in artboard order, so keep frames adjacent and sequential in the Artboards panel.
 
 ## Reuse the group's styles
 
-Don't start from a blank artboard. Pull in colors, character styles, and symbols from [ScientificGraphicDesign/IllustratorsStyles](https://github.com/JQInanophotonics/ScientificGraphicDesign/tree/main/IllustratorsStyles) so a figure built for a talk still matches the group's paper figures.
+Don't start from a blank artboard. Pull in colors, character styles, and symbols from [ScientificGraphicDesign/IllustratorsStyles](https://github.com/JQInanophotonics/ScientificGraphicDesign/tree/main/IllustratorsStyles) so a figure built for a talk still matches the group's paper figures. The reference talk also ships its own `fonts/` folder (Helvetica Neue, IBM Plex Sans Condensed) — match those in Illustrator's type tool so text set in Illustrator doesn't visually clash with text set in Beamer on the same slide.
 
 Next: [02 — Exporting figures](02-ExportingFigures.md)

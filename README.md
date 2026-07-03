@@ -33,7 +33,7 @@ Further reading: *Presentation Zen* by Garr Reynolds, *The Visual Display of Qua
 | [02 — Exporting figures](Presentations/02-ExportingFigures.md) | Vector vs. raster export, and what PowerPoint needs that Beamer doesn't |
 | [03 — Animations](Presentations/03-Animations.md) | Multi-artboard → multi-page PDF → `\imageseq` |
 | [04 — Using Beamer](Presentations/04-UsingBeamer.md) | Starting a talk from the template, folder layout, compiling, house style |
-| [Example — TalkName](Presentations/Example-TalkName.md) | Annotated walkthrough of a real talk *(placeholder — to fill in)* |
+| [Example — CLEOus](Presentations/Example-CLEOus.md) | Annotated walkthrough of a real talk, start to finish |
 
 ## What's in this repo
 
@@ -45,7 +45,7 @@ ScientificPresentations/
     ├── 02-ExportingFigures.md
     ├── 03-Animations.md
     ├── 04-UsingBeamer.md
-    └── Example-TalkName.md
+    └── Example-CLEOus.md
 ```
 
 No binary assets live here. Illustrator templates and palettes are in [ScientificGraphicDesign](https://github.com/JQInanophotonics/ScientificGraphicDesign); the Beamer starting point is [JqiNanoBeamerTemplate](https://github.com/JQInanophotonics/JqiNanoBeamerTemplate).
