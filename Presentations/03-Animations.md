@@ -11,7 +11,7 @@ Select the frame-artboards and export them together as a **single multi-page PDF
 ## Drive it with `\imageseq`
 
 ```latex
-\imageseq[width=0.8\textwidth]{frames.pdf}{
+\imageseq{frames.pdf}{
   1:1,      % page 1 on slide-overlay 1
   2:2,      % page 2 on slide-overlay 2
   3:3-5,    % page 3 stays visible on overlays 3 through 5
@@ -19,7 +19,9 @@ Select the frame-artboards and export them together as a **single multi-page PDF
 }
 ```
 
-Real examples, straight from the reference talk's `.tex`:
+No `[width=...]` option here on purpose — see [01 — Artboards, "Never rescale a figure once it's placed"](01-Artboards.md#never-rescale-a-figure-once-its-placed). Every real call below leaves it out too: the frame set was already exported at the exact size its slot needs, so it places 1:1. If you find yourself reaching for `[width=...]` to make an `\imageseq` fit, that's a sign to resize the source artboards instead.
+
+Real examples, straight from the reference talk's `.tex` — all bare, no scaling option:
 
 ```latex
 % WaferScale.pdf — a plain 3-step build, one page per overlay

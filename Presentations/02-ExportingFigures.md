@@ -21,8 +21,10 @@ Use **PNG/JPG** when the content itself is raster — a photograph, a microscope
 
 ## If you're using PowerPoint
 
-The forewords on the main [README](../README.md) explain why Beamer is the safer default. If you do need PowerPoint slides:
+The forewords on the main [README](../README.md) explain why Beamer is the safer default. But the artboard/no-rescale rules from [01 — Artboards](01-Artboards.md) apply just as much here — PowerPoint just makes it easier to break them by accident:
 - Export figures as PNG at roughly **twice** the resolution you'd use for Beamer — PowerPoint decks get projected off more varied hardware, and you don't control the final render path the way a PDF guarantees.
+- **Insert at native size, then leave it alone.** `Insert > Pictures` drops the image in at 100%; don't drag a corner handle to "make it fit" the slide — that's the same rescaling mistake as `\includegraphics[width=...]` in Beamer, and it shrinks or grows any text baked into the figure right along with it. If it doesn't fit the slot, go back to Illustrator, resize the artboard, and re-export — check the exact placed size afterwards in `Format Picture > Size` (height/width fields), not by eye.
 - Embed fonts in the `.pptx` (`File > Options > Save > Embed fonts`) or stick to fonts you know will be installed on the podium computer — this is the single most common way a PowerPoint deck looks different at the conference than it did on your laptop.
+- PowerPoint has no `\imageseq` equivalent for the animation technique in [03 — Animations](03-Animations.md). The same same-size-artboards idea still applies — export each frame as its own PNG at identical pixel dimensions, then either place one per slide (duplicate the slide, swap the picture) or stack all of them on one slide and reveal them one at a time with `Animations > Appear`/`Disappear` in the same order they'd occupy `\imageseq` overlays.
 
 Next: [03 — Animations](03-Animations.md)

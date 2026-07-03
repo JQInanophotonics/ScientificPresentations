@@ -19,11 +19,17 @@ Further reading: *Presentation Zen* by Garr Reynolds, *The Visual Display of Qua
 
 ## The rules, in one screen
 
-1. **One Illustrator artboard per figure**, sized to match the slide's usable area — nothing gets rescaled or distorted when it's placed in Beamer.
-2. **Export vector (PDF/SVG)** for anything going into Beamer or staying editable; **export raster (PNG) only** for PowerPoint or photographic content.
-3. **For animated reveals**, build each frame as its own same-size artboard, export all of them together as **one multi-page PDF**, and drive it with the template's `\imageseq` macro.
-4. **Start every talk from [JqiNanoBeamerTemplate](https://github.com/JQInanophotonics/JqiNanoBeamerTemplate)** — clone it fresh per talk, don't hand-roll a preamble.
-5. **The macro reference lives in the template**, at [`MACRO_MANUAL.md`](https://github.com/JQInanophotonics/JqiNanoBeamerTemplate/blob/main/MACRO_MANUAL.md) — this wiki won't duplicate it.
+These first three apply no matter which software assembles the final deck — they're about how the figure is built, not how it's placed:
+
+1. **One Illustrator artboard per figure, sized to the exact slot it fills** — the column width it sits in, not the whole slide (see [01 — Artboards](Presentations/01-Artboards.md)).
+2. **Never rescale a figure once it's placed** — no `width=`/`scale=` in Beamer, no drag-resizing in PowerPoint. That's the whole point of rule 1: place it at native size and any text set inside it in Illustrator matches your slide's type. If it doesn't fit, resize the *artboard* and re-export.
+3. **For animated reveals**, build each frame as its own same-size artboard and export them together — see [03 — Animations](Presentations/03-Animations.md) for the Beamer path (`\imageseq` off one multi-page PDF) and the PowerPoint path (one PNG per frame, revealed with `Appear`/`Disappear` animations).
+
+The rest is specific to whichever tool you use:
+
+4. **Export vector (PDF)** for Beamer or anything staying editable; **export raster (PNG)** for PowerPoint or photographic content.
+5. **If you're using Beamer** (recommended, see forewords above) — **start every talk from [JqiNanoBeamerTemplate](https://github.com/JQInanophotonics/JqiNanoBeamerTemplate)**, clone it fresh per talk, don't hand-roll a preamble. Its macro reference lives in [`MACRO_MANUAL.md`](https://github.com/JQInanophotonics/JqiNanoBeamerTemplate/blob/main/MACRO_MANUAL.md) — this wiki won't duplicate it.
+6. **If you're using PowerPoint** — see the PowerPoint notes in [02 — Exporting figures](Presentations/02-ExportingFigures.md); the artboard/no-rescale rules above are the ones PowerPoint makes easiest to break by accident.
 
 ## Pages
 

@@ -75,7 +75,7 @@ This runs lualatex and biber as many times as needed and produces `main.pdf`. Re
 - `\twocol[align]{leftW}{rightW}{left}{right}` — general two-column layout.
 - `\twocolfig[align]{leftW}{rightW}{left}{right}` — the figure-slide variant of `\twocol`: it also raises the right column so a figure's top edge lines up with the frame title, instead of sitting a full title-height lower. This is what almost every content slide in the reference talk uses — text/equations on the left, an `\imageseq` figure on the right.
 - `\point{text}` — bold section header that auto-advances the overlay.
-- `\imageseq[opts]{file.pdf}{mapping}` — animated figure reveals, see [03 — Animations](03-Animations.md).
+- `\imageseq[opts]{file.pdf}{mapping}` — animated figure reveals, see [03 — Animations](03-Animations.md). Leave `[opts]` empty in normal use — no `width=`/`scale=`; the artboard should already be the right size (see [01 — Artboards](01-Artboards.md#never-rescale-a-figure-once-its-placed)).
 - `\citefoot{key}` — footnote citation from `Biblio.bib`, e.g. `\good{optical frequency synthesis}\footcite{DiddamsScience2020}`.
 - `\thankyouslide{hero-image}{email}{references}` — the closing slide layout: a large hero figure, your contact email, and a two-column reference list, all laid out for you. The reference talk calls it once in `\appendix`, right after the last content frame.
 

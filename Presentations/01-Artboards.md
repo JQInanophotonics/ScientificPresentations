@@ -13,6 +13,16 @@ A real reference talk ([Example — CLEOus](Example-CLEOus.md)) settles on two r
 
 Once you know which column split a slide uses, reuse the matching artboard size for every figure that goes in that slot — don't recompute it per figure. This is also why `CombMetrology.pdf` (used inside a *nested* `\twocol[c]{0.3}{0.3}{...}` for a small equation-side diagram) is smaller still: **220 × 254 pt**. The artboard follows the layout, the layout doesn't follow the artboard.
 
+## Never rescale a figure once it's placed
+
+This is the entire reason to bother sizing the artboard correctly in the first place: **place the figure at its native size, never scaled up or down** — no `width=`/`scale=` in `\includegraphics`/`\imageseq` (Beamer), no drag-resizing on the canvas (PowerPoint). This holds regardless of which tool assembles the final deck.
+
+Why it matters: any text set inside the figure in Illustrator was drawn at a specific point size. If you then place the figure at, say, 80% of its native size to force it into a slot, that text shrinks to 80% along with it — and now it no longer matches your slide's body text, even though you picked the same font and the same nominal size in both places. Scale the figure and you've silently made two different type sizes look the same on screen and two same-declared sizes look different. The only fix that doesn't fight itself: get the artboard's physical size right before export (per the sizes above), so placing it "as-is" is always correct.
+
+If a figure looks wrong once placed — too big, too small, wrong aspect ratio for its slot — that's a signal to go back to Illustrator, resize the *artboard*, and re-export. It is never a signal to reach for a `width=` option.
+
+
+
 ## Setting artboard size and units
 
 - `File > Document Setup` or the Artboard tool (`Shift+O`) to set width/height. Working in points (`pt`) makes it trivial to match the numbers above directly, since Beamer/TikZ also thinks in points.
