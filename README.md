@@ -6,9 +6,26 @@ I won't judge if you use PowerPoint, but know that you'll have a non-negligible 
 
 This repo is the group's guide to making a good presentation — the narrative you tell, the figures that carry it, and the details that make both land. That covers structuring a talk, building **consistent, reusable, animatable** figures for it, and the practice of assembling them into a deck. Almost all of it — how to structure the talk, how to size and export figures, how to animate them — holds regardless of which software assembles the final deck. Only the last mile (actually placing figures and compiling) is tool-specific, and there the group's recommended path is Beamer via the [JqiNanoBeamerTemplate](https://github.com/JQInanophotonics/JqiNanoBeamerTemplate). Read the pages in order the first time; use them as a checklist afterwards — same spirit as [ScientificDataManagement](https://github.com/JQInanophotonics/ScientificDataManagement).
 
+## Structuring a talk
+
+Before anything gets built in Illustrator or Beamer, decide what the talk is actually going to say — full discussion in [00 — Structuring a talk](Presentations/00-TalkStructure.md), summary here.
+
+A talk isn't a paper: your audience gets one linear pass, at your pace, with no rereading. That means **curating ruthlessly** — a paper can carry every control experiment, a 12-minute talk has room for two or three ideas — and **budgeting minutes like a resource**: under a minute per slide in a short talk means one new idea per slide, not three.
+
+The shape that works for most short scientific talks:
+
+1. **Hook** — ground the audience in why the general topic matters, before your own result shows up.
+2. **Tension** — state plainly what the field has been stuck on. Not "our result is nice," but "here is a real bottleneck."
+3. **The idea** — introduce your approach as the direct answer to that tension, not as a free-standing new topic.
+4. **Evidence** — including the false start, if there was one. Showing the dead end before the fix makes the eventual result land harder, and it's honest about how the work went.
+5. **Payoff** — bookend back to the hook: revisit the exact thing you opened on and show your work answering it. That's what makes a talk feel resolved instead of just stopped.
+6. **Conclusion** — restate the bottleneck and the architecture, briefly; the audience already has the story.
+
+Anything correct but not load-bearing for that story belongs in backup slides, not the main narrative. See [00 — Structuring a talk](Presentations/00-TalkStructure.md) for a full walkthrough of this shape against a real talk, how the `\good`/`\warn`/`\bad` macros ([04 — Using Beamer](Presentations/04-UsingBeamer.md)) are used to mark the tension/resolution beats on-slide, and a checklist to self-review a draft against.
+
 ## Basic presentation design
 
-Before the tooling, a few things worth keeping in mind whichever tool you use. This is about how a slide *looks*; for how a whole talk should be *structured and paced* — the narrative arc, what to cut for a short talk, how to hook the audience — see [00 — Structuring a talk](Presentations/00-TalkStructure.md).
+Once the narrative is decided, a few things about how a slide *looks*, whichever tool you use:
 
 - **One idea per slide.** If you're tempted to add a second point, it's a second slide.
 - **Typography and color should match across the whole talk** — same font, same palette, same meaning for a given color from the first slide to the last. See [ScientificGraphicDesign](https://github.com/JQInanophotonics/ScientificGraphicDesign) for the group's palettes and type choices.
