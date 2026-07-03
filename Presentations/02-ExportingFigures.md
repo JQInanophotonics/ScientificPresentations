@@ -13,12 +13,15 @@ Export settings that matter:
 
 ## Keep figures light — your talk repo likely syncs through Overleaf's git bridge
 
-If you compile on Overleaf and sync it with the talk's GitHub repo (see [04 — Using Beamer](04-UsingBeamer.md) for why a talk repo is a real git repo in the first place), size matters twice over: Overleaf itself recommends staying under 100 MB for any project using Git/GitHub sync (vs. 500 MB for a project with no git integration), and a bloated repo is slower to clone, diff, and push regardless.
+If you compile on Overleaf and sync it with the talk's GitHub repo (see [04 — Using Beamer](04-UsingBeamer.md) for why a talk repo is a real git repo in the first place), size matters. Overleaf's own documented limits ([plan limits](https://docs.overleaf.com/getting-started/free-and-premium-plans/plan-limits), [project limits](https://docs.overleaf.com/on-premises/support/project-limits)):
 
-[ScientificGraphicDesign](https://github.com/JQInanophotonics/ScientificGraphicDesign/tree/main/IllustratorsStyles) already sets the group's rule of thumb for this — **keep each exported figure under ~10 MB**. If a figure is over that, the bitmap inside it isn't rasterized down to what the plot actually needs (see [01 — Artboards](01-Artboards.md) and the note below on linked vs. embedded bitmaps). A dozen or so figures at a few MB each, per the reference talk's own `Figures/` folder, stays comfortably inside Overleaf's git-sync budget; one bloated 80 MB figure can blow it on its own.
+- **50 MB hard cap on any individual file** — a figure over that won't upload/sync at all.
+- **Recommended total project size: 500 MB, or under 100 MB specifically if you're using Git/GitHub sync** — this is the number that matters for a talk repo, since [04 — Using Beamer](04-UsingBeamer.md) has you syncing one.
+
+A dozen or so figures well under a few MB each, per the reference talk's own `Figures/` folder, stays comfortably inside that 100 MB git-sync budget; one bloated 80 MB figure could blow through it on its own even though it's under the 50 MB per-file cap. If a figure is unexpectedly large, the bitmap inside it likely isn't rasterized down to what the plot actually needs (see [01 — Artboards](01-Artboards.md) and the note below on linked vs. embedded bitmaps) — but there's no fixed per-figure number Overleaf enforces below 50 MB; treat "keep it small" as budgeting against the 100 MB project total, not a specific target size for each file.
 
 - **Link raster into Illustrator, don't embed it.** A linked bitmap keeps the `.ai` file itself small and responsive; Illustrator embeds the linked raster data into the PDF automatically at export time, so you don't lose anything at publication/talk time. (Uncheck "Create PDF Compatible File" in Illustrator's save options, or every save silently embeds a preview copy of every linked image into the `.ai` file too.)
-- This is also the same rule as [01 — Artboards, "Never rescale a figure once it's placed"](01-Artboards.md#never-rescale-a-figure-once-its-placed), from the other direction: `ScientificGraphicDesign` independently arrives at "you should not have to use `[width=\textwidth]` in `\includegraphics`" as a consequence of exporting the figure at its real placed size — oversized source bitmaps and rescaled placement tend to go together.
+- This is also the same rule as [01 — Artboards, "Never rescale a figure once it's placed"](01-Artboards.md#never-rescale-a-figure-once-its-placed), from the other direction: an oversized source bitmap and a rescaled placement tend to go together — if you're not placing a figure at native size, it's easy to not notice the file is carrying more raster data than the slide will ever show.
 
 ## Raster only when you have to
 
