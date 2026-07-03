@@ -10,18 +10,18 @@ This repo is the group's guide to making a good presentation — the narrative y
 
 Before anything gets built in Illustrator or Beamer, decide what the talk is actually going to say — full discussion in [00 — Structuring a talk](Presentations/00-TalkStructure.md), summary here.
 
-A talk isn't a paper: your audience gets one linear pass, at your pace, with no rereading. That means **curating ruthlessly** — a paper can carry every control experiment, a 12-minute talk has room for two or three ideas — and **budgeting minutes like a resource**: under a minute per slide in a short talk means one new idea per slide, not three.
+A presentation, like a paper, has to be appealing — more so, since there's no abstract to skim first. Two things to settle before drafting a single slide: **tell the audience why they're here** — not just why the topic matters in the abstract, but why *this* audience should want to listen for the next several minutes — and **respect how much they can absorb**: a talk is heard once, linearly, at your pace, with no rereading; a 12-minute talk has room for two or three ideas, not a paper's worth of them. Keep only what the story needs; the rest is backup slides (see below).
 
-The shape that works for most short scientific talks:
+Reading the reference talk ([Example — CLEOus](Presentations/Example-CLEOus.md)) section by section, that plays out as a specific, reusable shape — not a universal law, just what this real, well-received talk actually does:
 
-1. **Hook** — ground the audience in why the general topic matters, before your own result shows up.
-2. **Tension** — state plainly what the field has been stuck on. Not "our result is nice," but "here is a real bottleneck."
-3. **The idea** — introduce your approach as the direct answer to that tension, not as a free-standing new topic.
-4. **Evidence** — including the false start, if there was one. Showing the dead end before the fix makes the eventual result land harder, and it's honest about how the work went.
-5. **Payoff** — bookend back to the hook: revisit the exact thing you opened on and show your work answering it. That's what makes a talk feel resolved instead of just stopped.
-6. **Conclusion** — restate the bottleneck and the architecture, briefly; the audience already has the story.
+1. **Hook** — CLEOus opens on optical frequency combs in general and their three textbook applications, not the authors' own result — context the room already cares about, before narrowing to this work.
+2. **Tension** — states plainly what the field is stuck on: shrinking a comb on-chip makes CEO detection very hard, ending the slide on `\bad{CEO detection VERY hard with on-chip OFC}`.
+3. **The idea** — pivots explicitly as the answer to that exact tension: *"Rethinking microcomb beyond shrinking... CEO encoded rather than post-generation detected."*
+4. **Evidence, including the false start** — a whole slide is spent on the first demonstration not being good enough (`\badbox{Not readily useful: ...}`) before the next slide shows the fix.
+5. **Payoff, bookended to the hook** — the "Metrological use" slide revisits the *same three applications* from the opening and shows the new architecture satisfying each.
+6. **Conclusion** — restates the bottleneck and the architecture, briefly.
 
-Anything correct but not load-bearing for that story belongs in backup slides, not the main narrative. See [00 — Structuring a talk](Presentations/00-TalkStructure.md) for a full walkthrough of this shape against a real talk, how the `\good`/`\warn`/`\bad` macros ([04 — Using Beamer](Presentations/04-UsingBeamer.md)) are used to mark the tension/resolution beats on-slide, and a checklist to self-review a draft against.
+See [00 — Structuring a talk](Presentations/00-TalkStructure.md) for the full discussion, how the `\good`/`\warn`/`\bad` macros ([04 — Using Beamer](Presentations/04-UsingBeamer.md)) mark these beats on-slide, and a checklist to self-review a draft against.
 
 ## Basic presentation design
 

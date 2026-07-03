@@ -2,25 +2,23 @@
 
 Before any artboard gets opened, decide what the talk is actually going to say. This page is about that — the other pages ([01](01-Artboards.md)–[04](04-UsingBeamer.md)) are about building and placing the figures once you know what story they need to tell.
 
-## A talk is not a paper
+## Interest the audience — that is the actual job
 
-A paper is read at the reader's own pace, out of order if they want, with the option to reread a dense paragraph or skip to the figure they care about. A talk is consumed **once, linearly, at a pace you control**. If a sentence doesn't land, it's gone — there's no going back. That has two consequences:
+A presentation, like a paper, has to be appealing — more so, since there's no abstract for someone to skim before deciding whether to keep listening. Settle these two things before drafting a single slide, and keep re-checking your draft against them:
 
-- **Curate ruthlessly.** A paper can carry every control experiment and every derivation; a talk cannot. Keep the two or three results that actually matter to *this* narrative, and move everything else to backup slides (see the end of this page).
-- **Budget your minutes like a resource.** The reference talk ([Example — CLEOus](Example-CLEOus.md)) is a 12-minute CLEO postdeadline slot across 13 content frames — under a minute per slide on average. At that pace, a slide can introduce **one new idea**, not three. If a slide needs two minutes to explain, it's actually two slides, or it doesn't belong in a 12-minute talk.
+- **Tell them why they're here.** Not "why does this topic matter to the field" in the abstract — why should *this* audience, in *this* room, want to give you their attention for the next several minutes. A hook that only justifies the topic in general still risks leaving the room polite but unmoved.
+- **Respect how much they can actually absorb.** A talk is consumed **once, linearly, at a pace you control** — no rereading, no skipping ahead to the figure they care about, unlike a paper. A paper can carry every control experiment and every derivation; a 12-minute talk has room for two or three ideas. If a slide needs two minutes to explain, it's actually two slides, or it doesn't belong in this talk. Keep only the results and points that matter to the story you're telling — everything else is a paper, a poster, or a backup slide (see below).
 
-## The shape: hook → tension → idea → evidence → payoff
+## A shape you can borrow: hook → tension → idea → evidence → payoff
 
-The reference talk follows a shape that works for most short scientific talks:
+This isn't handed down from anywhere authoritative — it's the pattern that falls out of reading the reference talk ([Example — CLEOus](Example-CLEOus.md)) section by section. It happens to resemble "And, But, Therefore" (ABT), a setup/complication/resolution structure taught in some science-communication training — worth knowing that name exists if you want to read further, but the evidence for it here is simply that it's what a real, well-received talk from this lab actually does, not a claim that it's the only shape or the right one for every talk:
 
-1. **Hook** — ground the audience in why the general topic matters, before your specific contribution shows up at all. CLEOus opens not with the authors' own result, but with optical frequency combs in general and their three textbook applications (frequency synthesis, low-noise microwave generation, clockwork) — context the whole room already cares about.
+1. **Hook** — ground the audience in why the general topic matters, before your specific contribution shows up at all. CLEOus opens not with the authors' own result, but with optical frequency combs in general and their three textbook applications (frequency synthesis, low-noise microwave generation, clockwork) — context the whole room already cares about. This is the mechanism for "tell them why they're here": start from something the audience already values, then narrow to your work.
 2. **Tension** — state, plainly, what the field has been stuck on. Not "our result is nice," but "here is a real bottleneck, and it has resisted solutions." CLEOus: shrinking a comb onto a chip lowers per-tooth power, which makes carrier-envelope-offset (CEO) detection — needed for every application from step 1 — very hard. The slide literally ends on `\bad{CEO detection VERY hard with on-chip OFC}`.
 3. **The idea** — introduce your approach as the response to that specific tension, not as a free-standing achievement. CLEOus pivots explicitly: *"Rethinking microcomb beyond shrinking... CEO encoded rather than post-generation detected"* — the idea is framed as attacking the exact bottleneck just stated, not as a new topic.
 4. **Evidence, including the false start.** CLEOus doesn't hide that the first χ⁽³⁾ PDCS demonstration wasn't good enough — a slide is spent on it, ending with `\badbox{Not readily useful: (1) does not span an octave (2) pumps are not comb teeth}` — before the next slide shows the fix (adding the self-alignment condition). Showing the dead end first makes the eventual result land harder, and it's honest about how the work actually went.
 5. **Payoff, bookended back to the hook.** The second-to-last slide, "Metrological use," revisits the *exact same three applications* from the opening slide — synthesis, microwave generation, clockwork — and shows the new architecture satisfying each. Opening and closing on the same list is what makes the talk feel like it resolved something, instead of just stopping.
 6. **Conclusion** — restate the bottleneck, restate the architecture, then perspectives (what's next, who's talking about it tomorrow). Short; the audience already has the story, this is the recap they'll remember.
-
-This is the same "and, but, therefore" shape (setup — complication — resolution) that works for any short-form scientific narrative, not something specific to this talk or this field.
 
 ## The `\good`/`\warn`/`\bad` macros are how you mark this on-slide
 
@@ -40,6 +38,7 @@ If you're cutting a result from the main talk and hesitating because "but it's i
 
 ## A short checklist
 
+- Does your opening give the audience a reason to want to listen, or does it just state the topic?
 - Can you state the tension/bottleneck in one sentence, before you've mentioned your own result?
 - Does your idea slide explicitly answer that sentence, or does it just start a new topic?
 - If you have a result that didn't pan out on the way there, does the talk show it (briefly) rather than hide it?
