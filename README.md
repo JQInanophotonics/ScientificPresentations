@@ -1,10 +1,23 @@
-# Scientific Presentations
+<div align="center">
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/header.svg"/><img src="assets/header.svg" width="97%" alt="Scientific Presentations"/></picture>
+
+<a href="#pages"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/PAGES-0d1117?style=flat-square&logoColor=ffffff"/><img src="https://img.shields.io/badge/PAGES-ffffff?style=flat-square&logoColor=1a1a1a" alt="Pages"/></picture></a>
+<a href="https://github.com/JQInanophotonics/JqiNanoBeamerTemplate"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/BEAMER%20TEMPLATE-0d1117?style=flat-square&logoColor=ffffff"/><img src="https://img.shields.io/badge/BEAMER%20TEMPLATE-ffffff?style=flat-square&logoColor=1a1a1a" alt="JqiNanoBeamerTemplate"/></picture></a>
+<a href="https://github.com/JQInanophotonics/QuickStartGit"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/QUICKSTART%20GIT-0d1117?style=flat-square&logoColor=ffffff"/><img src="https://img.shields.io/badge/QUICKSTART%20GIT-ffffff?style=flat-square&logoColor=1a1a1a" alt="QuickStartGit"/></picture></a>
+<a href="https://github.com/JQInanophotonics/ScientificGraphicDesign"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/GRAPHIC%20DESIGN-0d1117?style=flat-square&logoColor=ffffff"/><img src="https://img.shields.io/badge/GRAPHIC%20DESIGN-ffffff?style=flat-square&logoColor=1a1a1a" alt="ScientificGraphicDesign"/></picture></a>
+
+</div>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/banner-forewords.svg"/><img src="assets/banner-forewords.svg" width="97%" alt="00 — Forewords"/></picture>
 
 ## Forewords
 
 I won't judge if you use PowerPoint, but know that you'll have a non-negligible chance your slide deck won't display properly at a conference — mismatched fonts, resized figures, colors gone wrong. Beamer (LaTeX for presentations) outputs a PDF that looks identical on every machine, since PDF is a standard, not a moving target. It also means the talk itself is a plain-text `.tex` file rather than a binary blob, so it version-controls properly — real diffs, real history, mergeable changes — the way a `.pptx` never quite does; see [04 — Using Beamer, "Why this is a git repo, not a single file"](Presentations/04-UsingBeamer.md#why-this-is-a-git-repo-not-a-single-file). If git itself is new to you, [QuickStartGit](https://github.com/JQInanophotonics/QuickStartGit) is the group's prerequisite primer — read that first.
 
 This repo is the group's guide to making a good presentation — the narrative you tell, the figures that carry it, and the details that make both land. That covers structuring a talk, building **consistent, reusable, animatable** figures for it, and the practice of assembling them into a deck. Almost all of it — how to structure the talk, how to size and export figures, how to animate them — holds regardless of which software assembles the final deck. Only the last mile (actually placing figures and compiling) is tool-specific, and there the group's recommended path is Beamer via the [JqiNanoBeamerTemplate](https://github.com/JQInanophotonics/JqiNanoBeamerTemplate). Read the pages in order the first time; use them as a checklist afterwards — same spirit as [ScientificDataManagement](https://github.com/JQInanophotonics/ScientificDataManagement).
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/banner-structuring-a-talk.svg"/><img src="assets/banner-structuring-a-talk.svg" width="97%" alt="01 — Structuring a Talk"/></picture>
 
 ## Structuring a talk
 
@@ -23,6 +36,8 @@ Reading the reference talk ([Example — CLEOus](Presentations/Example-CLEOus.md
 
 See [00 — Structuring a talk](Presentations/00-TalkStructure.md) for the full discussion, how the `\good`/`\warn`/`\bad` macros ([04 — Using Beamer](Presentations/04-UsingBeamer.md)) mark these beats on-slide, and a checklist to self-review a draft against.
 
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/banner-basic-design.svg"/><img src="assets/banner-basic-design.svg" width="97%" alt="02 — Basic Presentation Design"/></picture>
+
 ## Basic presentation design
 
 Once the narrative is decided, a few things about how a slide *looks*, whichever tool you use:
@@ -33,6 +48,8 @@ Once the narrative is decided, a few things about how a slide *looks*, whichever
 - **Don't overfill a slide.** If your audience is reading dense text, they've stopped listening to you.
 
 Further reading: *Presentation Zen* by Garr Reynolds, *The Visual Display of Quantitative Information* by Edward Tufte (also recommended in ScientificGraphicDesign).
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/banner-the-rules.svg"/><img src="assets/banner-the-rules.svg" width="97%" alt="03 — The Rules, in One Screen"/></picture>
 
 ## The rules, in one screen
 
@@ -48,6 +65,8 @@ The rest is specific to whichever tool you use:
 5. **If you're using Beamer** (recommended, see forewords above) — **start every talk from [JqiNanoBeamerTemplate](https://github.com/JQInanophotonics/JqiNanoBeamerTemplate)**, clone it fresh per talk, don't hand-roll a preamble. Its macro reference lives in [`MACRO_MANUAL.md`](https://github.com/JQInanophotonics/JqiNanoBeamerTemplate/blob/main/MACRO_MANUAL.md) — this wiki won't duplicate it.
 6. **If you're using PowerPoint** — see the PowerPoint notes in [02 — Exporting figures](Presentations/02-ExportingFigures.md); the artboard/no-rescale rules above are the ones PowerPoint makes easiest to break by accident.
 
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/banner-pages.svg"/><img src="assets/banner-pages.svg" width="97%" alt="04 — Pages"/></picture>
+
 ## Pages
 
 | Page | What it covers |
@@ -59,11 +78,14 @@ The rest is specific to whichever tool you use:
 | [04 — Using Beamer](Presentations/04-UsingBeamer.md) | Starting a talk from the template, folder layout, compiling, house style |
 | [Example — CLEOus](Presentations/Example-CLEOus.md) | Annotated walkthrough of a real talk, start to finish |
 
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/banner-repo-layout.svg"/><img src="assets/banner-repo-layout.svg" width="97%" alt="05 — What's in This Repo"/></picture>
+
 ## What's in this repo
 
 ```
 ScientificPresentations/
 ├── README.md
+├── assets/                    # this README's own banners (light + dark/), not talk content
 └── Presentations/
     ├── 00-TalkStructure.md
     ├── 01-Artboards.md
@@ -73,7 +95,9 @@ ScientificPresentations/
     └── Example-CLEOus.md
 ```
 
-No binary assets live here. Illustrator templates and palettes are in [ScientificGraphicDesign](https://github.com/JQInanophotonics/ScientificGraphicDesign); the Beamer starting point is [JqiNanoBeamerTemplate](https://github.com/JQInanophotonics/JqiNanoBeamerTemplate).
+No figure/talk-content assets live here. Illustrator templates and palettes are in [ScientificGraphicDesign](https://github.com/JQInanophotonics/ScientificGraphicDesign); the Beamer starting point is [JqiNanoBeamerTemplate](https://github.com/JQInanophotonics/JqiNanoBeamerTemplate).
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/banner-see-also.svg"/><img src="assets/banner-see-also.svg" width="97%" alt="06 — See Also"/></picture>
 
 ## See also
 

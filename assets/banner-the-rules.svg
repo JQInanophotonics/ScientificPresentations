@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 84" width="1200" height="84" role="img" aria-label="03 — The Rules, in One Screen">
+  <rect x="0" y="0" width="1200" height="84" fill="#FFFFFF"/>
+  <rect x="0" y="80" width="1200" height="4" fill="#E6E6E6"/>
+  <rect x="0" y="0" width="110" height="84" fill="#E21833"/>
+  <text x="55.0" y="42.0" font-family="'Monaspace Neon','SF Mono',Menlo,Consolas,monospace" font-size="30" font-weight="500" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">03</text>
+  <text x="146" y="42.0" font-family="'Helvetica Neue Condensed','Helvetica Neue',Arial,sans-serif" font-size="34" font-weight="700" letter-spacing="1.5" fill="#1a1a1a" text-anchor="start" dominant-baseline="central">THE RULES, IN ONE SCREEN</text>
+</svg>
