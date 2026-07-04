@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" width="1200" height="150" role="img" aria-label="Scientific Presentations">
-  <rect x="0" y="0" width="1200" height="150" fill="#FFFFFF"/>
-  <rect x="0" y="144" width="1200" height="6" fill="#E21833"/>
-  <text x="600.0" y="70" font-family="'Helvetica Neue Condensed','Helvetica Neue',Arial,sans-serif" font-size="56" font-weight="700" letter-spacing="3" fill="#1a1a1a" text-anchor="middle" dominant-baseline="central">SCIENTIFIC PRESENTATIONS</text>
-  <text x="600.0" y="112" font-family="'Monaspace Neon','SF Mono',Menlo,Consolas,monospace" font-size="18" font-weight="400" letter-spacing="1" fill="#E21833" text-anchor="middle" dominant-baseline="central">JQInanophotonics — talks, figures, and animations</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 130" width="1200" height="130" role="img" aria-label="Scientific Presentations">
+  <rect x="0" y="0" width="1200" height="130" fill="#FFFFFF"/>
+  <text x="600.0" y="62" font-family="'Helvetica Neue Condensed','Helvetica Neue',Arial,sans-serif" font-size="50" font-weight="700" letter-spacing="3" fill="#1a1a1a" text-anchor="middle">SCIENTIFIC PRESENTATIONS</text>
+  <line x1="440.0" y1="88" x2="760.0" y2="88" stroke="#E21833" stroke-width="1.5"/>
+  <text x="600.0" y="112" font-family="ui-monospace,'Monaspace Neon','SF Mono',Menlo,Consolas,monospace" font-size="13" letter-spacing="1" fill="#8a8a8a" text-anchor="middle">JQInanophotonics/ScientificPresentations</text>
 </svg>
