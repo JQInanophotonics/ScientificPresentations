@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 90" width="1200" height="90" role="img" aria-label="03 — The Rules, in One Screen">
-  <rect x="0" y="0" width="1200" height="90" fill="#0d1117"/>
-  <text x="36" y="45.0" font-family="ui-monospace,'Monaspace Neon','SF Mono',Menlo,Consolas,monospace" font-size="34" font-weight="600" fill="#262b32" dominant-baseline="central">03</text>
-  <text x="94.1" y="45.0" font-family="'Helvetica Neue Condensed','Helvetica Neue',Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="1.5" fill="#F5F5F5" dominant-baseline="central">THE RULES, IN ONE SCREEN</text>
-  <line x1="495.7" y1="45.0" x2="1160" y2="45.0" stroke="#E21833" stroke-width="1.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 116" width="1200" height="116" role="img" aria-label="03 — The Rules, in One Screen">
+  <rect x="0" y="0" width="1200" height="116" fill="#0d1117"/>
+  <text x="40" y="58.0" font-family="ui-monospace,'Monaspace Neon','SF Mono',Menlo,Consolas,monospace" font-size="54" font-weight="600" fill="#262b32" dominant-baseline="central">03</text>
+  <text x="126.5" y="58.0" font-family="'Helvetica Neue Condensed','Helvetica Neue',Arial,sans-serif" font-size="37" font-weight="700" letter-spacing="2" fill="#F5F5F5" dominant-baseline="central">THE RULES, IN ONE SCREEN</text>
+  <line x1="727.3" y1="58.0" x2="1156" y2="58.0" stroke="#E21833" stroke-width="2"/>
 </svg>
