@@ -49,7 +49,7 @@ These first three apply no matter which software assembles the final deck — th
 
 1. **One Illustrator artboard per figure, sized to the exact slot it fills** — the column width it sits in, not the whole slide (see [01 — Artboards](Presentations/01-Artboards.md)).
 2. **Never rescale a figure once it's placed** — no `width=`/`scale=` in Beamer, no drag-resizing in PowerPoint. That's the whole point of rule 1: place it at native size and any text set inside it in Illustrator matches your slide's type. If it doesn't fit, resize the *artboard* and re-export.
-3. **For animated reveals**, build each frame as its own same-size artboard and export them together — see [03 — Animations](Presentations/03-Animations.md) for the Beamer path (`\imageseq` off one multi-page PDF) and the PowerPoint path (one PNG per frame, revealed with `Appear`/`Disappear` animations).
+3. **For animated reveals**, build each frame as its own same-size artboard and export them together — see [03 — Animations](Presentations/03-Animations.md) for the plain-Beamer path (`\includegraphics<M>[page=N]{file.pdf}`, one call per page), this group's `\imageseq` shortcut over it, and the PowerPoint path (one PNG per frame, revealed with `Appear`/`Disappear` animations).
 
 The rest is specific to whichever tool you use:
 
