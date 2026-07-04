@@ -11,15 +11,11 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/banner-forewords.svg"/><img src="assets/banner-forewords.svg" width="97%" alt="00 — Forewords"/></picture>
 
-## Forewords
-
 I won't judge if you use PowerPoint, but know that you'll have a non-negligible chance your slide deck won't display properly at a conference — mismatched fonts, resized figures, colors gone wrong. Beamer (LaTeX for presentations) outputs a PDF that looks identical on every machine, since PDF is a standard, not a moving target. It also means the talk itself is a plain-text `.tex` file rather than a binary blob, so it version-controls properly — real diffs, real history, mergeable changes — the way a `.pptx` never quite does; see [04 — Using Beamer, "Why this is a git repo, not a single file"](Presentations/04-UsingBeamer.md#why-this-is-a-git-repo-not-a-single-file). If git itself is new to you, [QuickStartGit](https://github.com/JQInanophotonics/QuickStartGit) is the group's prerequisite primer — read that first.
 
 This repo is the group's guide to making a good presentation — the narrative you tell, the figures that carry it, and the details that make both land. That covers structuring a talk, building **consistent, reusable, animatable** figures for it, and the practice of assembling them into a deck. Almost all of it — how to structure the talk, how to size and export figures, how to animate them — holds regardless of which software assembles the final deck. Only the last mile (actually placing figures and compiling) is tool-specific, and there the group's recommended path is Beamer via the [JqiNanoBeamerTemplate](https://github.com/JQInanophotonics/JqiNanoBeamerTemplate). Read the pages in order the first time; use them as a checklist afterwards — same spirit as [ScientificDataManagement](https://github.com/JQInanophotonics/ScientificDataManagement).
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/banner-structuring-a-talk.svg"/><img src="assets/banner-structuring-a-talk.svg" width="97%" alt="01 — Structuring a Talk"/></picture>
-
-## Structuring a talk
 
 Before anything gets built in Illustrator or Beamer, decide what the talk is actually going to say — full discussion in [00 — Structuring a talk](Presentations/00-TalkStructure.md), summary here.
 
@@ -38,8 +34,6 @@ See [00 — Structuring a talk](Presentations/00-TalkStructure.md) for the full 
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/banner-basic-design.svg"/><img src="assets/banner-basic-design.svg" width="97%" alt="02 — Basic Presentation Design"/></picture>
 
-## Basic presentation design
-
 Once the narrative is decided, a few things about how a slide *looks*, whichever tool you use:
 
 - **One idea per slide.** If you're tempted to add a second point, it's a second slide.
@@ -50,8 +44,6 @@ Once the narrative is decided, a few things about how a slide *looks*, whichever
 Further reading: *Presentation Zen* by Garr Reynolds, *The Visual Display of Quantitative Information* by Edward Tufte (also recommended in ScientificGraphicDesign).
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/banner-the-rules.svg"/><img src="assets/banner-the-rules.svg" width="97%" alt="03 — The Rules, in One Screen"/></picture>
-
-## The rules, in one screen
 
 These first three apply no matter which software assembles the final deck — they're about how the figure is built, not how it's placed:
 
@@ -67,8 +59,6 @@ The rest is specific to whichever tool you use:
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/banner-pages.svg"/><img src="assets/banner-pages.svg" width="97%" alt="04 — Pages"/></picture>
 
-## Pages
-
 | Page | What it covers |
 |------|-----------------|
 | [00 — Structuring a talk](Presentations/00-TalkStructure.md) | The narrative arc, pacing for short talks, what to cut vs. push to backup |
@@ -79,8 +69,6 @@ The rest is specific to whichever tool you use:
 | [Example — CLEOus](Presentations/Example-CLEOus.md) | Annotated walkthrough of a real talk, start to finish |
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/banner-repo-layout.svg"/><img src="assets/banner-repo-layout.svg" width="97%" alt="05 — What's in This Repo"/></picture>
-
-## What's in this repo
 
 ```
 ScientificPresentations/
@@ -98,7 +86,5 @@ ScientificPresentations/
 No figure/talk-content assets live here. Illustrator templates and palettes are in [ScientificGraphicDesign](https://github.com/JQInanophotonics/ScientificGraphicDesign); the Beamer starting point is [JqiNanoBeamerTemplate](https://github.com/JQInanophotonics/JqiNanoBeamerTemplate).
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/banner-see-also.svg"/><img src="assets/banner-see-also.svg" width="97%" alt="06 — See Also"/></picture>
-
-## See also
 
 Prerequisite: [QuickStartGit](https://github.com/JQInanophotonics/QuickStartGit) — the group's git primer, if `clone`/`commit`/`push`/`pull`/branches/conflicts aren't already familiar; also covers syncing a repo through Overleaf's Git integration. Sibling wikis in the org: [ScientificGraphicDesign](https://github.com/JQInanophotonics/ScientificGraphicDesign), [ScientificDataManagement](https://github.com/JQInanophotonics/ScientificDataManagement), [ScientificWriting](https://github.com/JQInanophotonics/ScientificWriting). Beamer macros: [JqiNanoBeamerTemplate](https://github.com/JQInanophotonics/JqiNanoBeamerTemplate).
